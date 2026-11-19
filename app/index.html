@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Cover Forge — GTA 6 Cover Art Maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>Leonida Cover Forge</h1>
+    <p class="tagline">Turn your photos into a Grand Theft Auto VI style cover poster.</p>
+  </div>
+  <div class="top-actions">
+    <button id="fill-samples" type="button">Load sample scenes</button>
+    <button id="reset-all" type="button">Reset</button>
+  </div>
+</header>
+<main class="app">
+  <section class="panel" aria-label="Cover controls">
+    <h2>Your photos</h2>
+    <p class="hint">Load up to four photos. Each panel can be zoomed and panned to frame the shot.</p>
+    <div id="slots"></div>
+
+    <h2>Layout</h2>
+    <div class="choices" id="layouts" role="group" aria-label="Layout">
+      <button type="button" data-layout="hero" class="picked">Hero</button>
+      <button type="button" data-layout="split">Split</button>
+      <button type="button" data-layout="grid">Grid</button>
+      <button type="button" data-layout="strip">Strip</button>
+    </div>
+
+    <h2>Colour grade</h2>
+    <div class="choices" id="grades" role="group" aria-label="Colour grade">
+      <button type="button" data-grade="sunset" class="picked">Sunset</button>
+      <button type="button" data-grade="neon">Neon Night</button>
+      <button type="button" data-grade="noir">Noir</button>
+      <button type="button" data-grade="palm">Palm</button>
+      <button type="button" data-grade="vice">Vice Pink</button>
+    </div>
+
+    <h2>Words</h2>
+    <label>Title
+      <input id="title" type="text" maxlength="24" value="LEONIDA">
+    </label>
+    <label>Subtitle
+      <input id="subtitle" type="text" maxlength="48" value="Welcome back to Vice City">
+    </label>
+    <label>Ribbon
+      <input id="ribbon" type="text" maxlength="18" value="GRAND THEFT AUTO VI">
+    </label>
+
+    <h2>Export size</h2>
+    <div class="choices" id="sizes" role="group" aria-label="Export size">
+      <button type="button" data-size="1080x1080" class="picked">1080 × 1080</button>
+      <button type="button" data-size="1080x1350">1080 × 1350</button>
+      <button type="button" data-size="1920x1080">1920 × 1080</button>
+    </div>
+    <button id="export" type="button" class="export">Download cover PNG</button>
+    <p id="status" role="status"></p>
+  </section>
+
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover poster"></canvas>
+    <p class="stage-note">Preview updates live. Export downloads the cover at the size you picked.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
